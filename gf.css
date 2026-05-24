@@ -1,0 +1,164 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  text-align: center;
+}
+
+.login-box {
+  margin: 100px auto;
+  padding: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: pink;
+  border: none;
+  cursor: pointer;
+}
+
+nav {
+  background: rgba(255,255,255,0.6);
+  padding: 10px;
+}
+
+nav a {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.audio-controls {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.audio-controls button {
+  padding: 6px 10px;
+  background: #ffd1e6;
+  border: 1px solid #ff9bb0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.page {
+  padding: 20px;
+}
+
+img {
+  width: 100px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/* Gallery layout */
+#galeriFoto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#galeriFoto img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  margin: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#galeriVideo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#galeriVideo video {
+  width: 320px;
+  max-width: 90vw;
+  margin: 10px;
+  border-radius: 8px;
+  background: #000;
+}
+
+/* Image modal styles */
+.image-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.image-modal-close {
+  margin-bottom: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  animation: fall 4s linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* LOVE BURST */
+.burst-heart {
+  position: fixed;
+  font-size: 24px;
+  animation: burst 1s ease-out forwards;
+}
+
+@keyframes burst {
+  from {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+}

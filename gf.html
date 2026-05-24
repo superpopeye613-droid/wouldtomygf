@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Love App 💖</title>
+  <link rel="stylesheet" href="gf.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <h2>Login Cinta 💖</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Masuk</button>
+  <p class="copyright">Alif Aditya - 06/06/2026</p>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+  
+  <!-- NAVBAR -->
+  <nav>
+    <a onclick="showPage('dashboard')">Dashboard</a>
+    <a onclick="showPage('foto')">Foto</a>
+    <a onclick="showPage('video')">Video</a>
+    <a onclick="showPage('cinta')">Cinta</a>
+    <div class="audio-controls">
+      <button id="bsButton" onclick="toggleBacksound()">Play Backsound</button>
+    </div>
+    <button onclick="logout()">Logout</button>
+  </nav>
+
+  <!-- Backsound (file placed in project root or subfolder, update path in gf.js if needed) -->
+  <audio id="backsound" loop src="backsound.mp3"></audio>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="page">
+    <h1>Selamat Datang 💖</h1>
+    <h2>Ini adalah aplikasi sederhana untuk menunjukkan cinta kita. Kamu bisa upload foto, video, dan bahkan menjawab pertanyaan cinta! Semoga kamu suka! 😘</h2>
+    <h2>III LOVEE YOUU SO MUCHH</h2>
+</div>
+
+  <!-- FOTO -->
+  <div id="foto" class="page" style="display:none;">
+    <h2>Folder Foto 📸</h2>
+    <p>cantikkuuu.....mungkinn foto ini belumm semuaa akuu taroo sinii,tapii inii sebagiann darii memorii kitaaa.</p>
+    <div id="galeriFoto"></div>
+  </div>
+
+  <!-- Image modal popup -->
+  <div id="imageModal" class="image-modal" style="display:none;">
+    <div class="image-modal-backdrop"></div>
+    <div class="image-modal-content">
+      <button class="image-modal-close" onclick="closeImageModal()">Close ✖</button>
+      <img id="modalImage" src="" alt="Foto besar">
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div id="video" class="page" style="display:none;">
+    <h2>Folder Video 🎥</h2>
+    <p>sayanggg...mungkin ini gasemua vidio yang pernah kita buat,tapi ini sebagian dari kenangan kita berdua.</p>
+    <div id="galeriVideo"></div>
+  </div>
+
+  <!-- CINTA -->
+  <div id="cinta" class="page" style="display:none;">
+    <h2>HAII NANDA MUNGKIN INI TIBA TIBA BUAT KAMU </h2>
+    <h2>BUT INI RENCANAKU DARI LAMA </h2>
+    <h2>Maukahh kamuu untukk Jadi Pacarku? 💕</h2>
+
+    <button onclick="jawab('iya')">Iya 💖</button>
+    <button onclick="jawab('tidak')">Tidak 😢</button>
+    <p id="jawaban"></p>
+  </div>
+
+</div>
+
+<script src="gf.js"></script>
+</body>
+</html>
